@@ -1,0 +1,867 @@
+
+
+<html lang="pt-BR">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portal Plinio Neto</title>
+
+<meta name="description" content="Portal Plinio Neto - Notícias, informações, eventos e acontecimentos da região.">
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+    }
+
+    /* =========================
+       TOPO
+    ========================= */
+
+    header {
+        background: #b40000;
+        color: white;
+        padding: 18px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.20);
+    }
+
+    .logo {
+        font-size: 27px;
+        font-weight: 900;
+        letter-spacing: -1px;
+    }
+
+    .logo span {
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        gap: 22px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        opacity: 0.75;
+    }
+
+
+    /* =========================
+       DESTAQUE
+    ========================= */
+
+    .destaque {
+        background:
+            linear-gradient(
+                rgba(120,0,0,0.70),
+                rgba(0,0,0,0.65)
+            ),
+            url("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1600&q=80");
+
+        background-size: cover;
+        background-position: center;
+
+        min-height: 430px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        color: white;
+
+        padding: 40px 20px;
+    }
+
+    .destaque-conteudo {
+        max-width: 850px;
+    }
+
+    .destaque h1 {
+        font-size: 55px;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .destaque p {
+        font-size: 19px;
+        line-height: 1.6;
+    }
+
+    .linha-vermelha {
+        width: 80px;
+        height: 5px;
+        background: #e00000;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+
+
+    /* =========================
+       SEÇÕES
+    ========================= */
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .titulo {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .titulo h2 {
+        font-size: 34px;
+        color: #b40000;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+    .titulo p {
+        color: #777;
+    }
+
+
+    /* =========================
+       NOTÍCIAS
+    ========================= */
+
+    .noticias {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .noticia {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .noticia:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .noticia img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .conteudo {
+        padding: 22px;
+    }
+
+    .categoria {
+        display: inline-block;
+        background: #b40000;
+        color: white;
+        padding: 5px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    .data {
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .conteudo h3 {
+        font-size: 21px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .conteudo p {
+        color: #666;
+        line-height: 1.6;
+        font-size: 15px;
+        margin-bottom: 18px;
+    }
+
+    .botao {
+        display: inline-block;
+        background: #b40000;
+        color: white;
+        text-decoration: none;
+        padding: 10px 17px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .botao:hover {
+        background: #8d0000;
+    }
+
+
+    /* =========================
+       INSTAGRAM / REDES
+    ========================= */
+
+    .redes {
+        background: #b40000;
+        color: white;
+        text-align: center;
+    }
+
+    .redes h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .redes p {
+        color: #ffe5e5;
+        margin-bottom: 25px;
+    }
+
+    .links-redes {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .links-redes a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        border: 2px solid white;
+        padding: 12px 25px;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .links-redes a:hover {
+        background: white;
+        color: #b40000;
+    }
+
+
+    /* =========================
+       PARCERIAS
+    ========================= */
+
+    .parcerias {
+        background: white;
+    }
+
+    .parceiros {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .parceiro {
+        min-height: 150px;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .parceiro:hover {
+        border-color: #b40000;
+        transform: translateY(-4px);
+    }
+
+    .parceiro img {
+        width: 110px;
+        height: 70px;
+        object-fit: contain;
+        margin-bottom: 12px;
+    }
+
+    .parceiro h3 {
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       CONTATO
+    ========================= */
+
+    .contato {
+        text-align: center;
+        background: #eeeeee;
+    }
+
+    .contato h2 {
+        color: #b40000;
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .contato p {
+        color: #666;
+    }
+
+    .whatsapp {
+        display: inline-block;
+        margin-top: 20px;
+        background: #25D366;
+        color: white;
+        padding: 14px 28px;
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .whatsapp:hover {
+        opacity: 0.85;
+    }
+
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    footer {
+        background: #700000;
+        color: white;
+        text-align: center;
+        padding: 28px 20px;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    footer p {
+        margin-top: 8px;
+        color: #ffdede;
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 900px) {
+
+        .noticias {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .parceiros {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .destaque h1 {
+            font-size: 42px;
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        nav {
+            gap: 12px;
+        }
+
+        nav a {
+            font-size: 13px;
+        }
+
+        .destaque {
+            min-height: 360px;
+        }
+
+        .destaque h1 {
+            font-size: 35px;
+        }
+
+        .destaque p {
+            font-size: 16px;
+        }
+
+        section {
+            padding: 45px 5%;
+        }
+
+        .titulo h2 {
+            font-size: 28px;
+        }
+
+        .noticias {
+            grid-template-columns: 1fr;
+        }
+
+        .parceiros {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+
+
+    /* BOTÃO FLUTUANTE DE PARCERIAS NO WHATSAPP */
+    .whatsapp-flutuante {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #25D366;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 14px 19px;
+        border-radius: 50px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+        transition: transform .2s, opacity .2s;
+    }
+
+    .whatsapp-flutuante:hover {
+        transform: translateY(-3px);
+        opacity: .92;
+    }
+
+    @media (max-width: 600px) {
+        .whatsapp-flutuante {
+            right: 14px;
+            bottom: 14px;
+            padding: 13px 16px;
+            font-size: 14px;
+        }
+    }
+
+
+
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 85px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ===================================== MENU PRINCIPAL ====================================== -->
+
+<header>
+
+<div class="logo">
+    PORTAL PLINIO NETO
+</div>
+
+<nav>
+
+    <a href="#inicio">Início</a>
+
+    <a href="#noticias">Notícias</a>
+
+    <a href="#parcerias">Parcerias</a>
+
+    <a href="#contato">Contato</a>
+
+</nav>
+
+</header>
+
+
+
+
+<!-- ===================================== CAPA DO SITE ====================================== -->
+
+<section class="destaque" id="inicio">
+
+<div class="destaque-conteudo">
+
+    <h1>
+        PORTAL PLINIO NETO
+    </h1>
+
+    <div class="linha-vermelha"></div>
+
+    <p>
+        Informação, notícias e acontecimentos
+        em um só lugar.
+    </p>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ===================================== NOTÍCIAS ====================================== -->
+
+<section id="noticias">
+
+<div class="titulo">
+
+    <h2>
+        Últimas Notícias
+    </h2>
+
+    <p>
+        Confira as principais notícias e acontecimentos.
+    </p>
+
+</div>
+
+
+<div class="noticias">
+
+
+    <!-- ===============================
+         NOTÍCIA 01
+    ================================ -->
+
+    <article class="noticia">
+
+        <!--
+        TROQUE A FOTO ABAIXO.
+
+        Exemplo:
+        <img src="fotos/noticia1.jpg">
+        -->
+
+        <img src="https://midias.correio24horas.com.br/2026/09/14/cantor-revelou-detalhes-de-conversa-com-fa-3414274-article.webp"a">
+
+
+        <div class="conteudo">
+
+            <span class="categoria">
+                Notícias
+            </span>
+
+            <div class="data">
+                14 de setem de 2026
+            </div>
+
+            <h3>
+                Bruno Magnata abre o jogo sobre desfecho com fã que o convidou para jantar durante show: ‘uma po#** dessa?’
+            </h3>
+
+            <p>
+                O cantor Bruno Magnata chamou atenção nas redes sociais após comentar o desfecho de uma situação envolvendo uma fã que o teria convidado para jantar durante um show. Em tom descontraído e com uma fala que repercutiu entre os internautas, o artista revelou detalhes do episódio e acabou gerando comentários e opiniões divididas nas redes sociais.
+
+            </p>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- ===============================
+         NOTÍCIA 02
+    ================================ -->
+
+    <article class="noticia">
+
+        <img src="https://www.mdbbahia.org.br/hd-imagens/noticias/4937-whatsapp-image-2025-04-07-at-16.41.43.jpeg"a">
+
+
+        <div class="conteudo">
+
+            <span class="categoria">
+                Politica
+            </span>
+
+            <div class="data">
+                07 de abril de 2025
+            </div>
+
+            <h3>
+                Eridan, primeira mulher prefeita de Ruy Barbosa.
+            </h3>
+
+            <p>
+                Eridan faz história em Ruy Barbosa ao se tornar a primeira mulher a ocupar o cargo de prefeita do município. Sua trajetória na política marca um momento importante para a cidade e representa a presença feminina em espaços de liderança e decisão.
+
+            </p>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- ===============================
+         NOTÍCIA 03
+    ================================ -->
+
+    <article class="noticia">
+
+        <img src="https://www.feiradesantana.ba.gov.br/imagens/noticias/01102026161135.jpg"a">
+
+
+        <div class="conteudo">
+
+            <span class="categoria">
+                Eventos
+            </span>
+
+            <div class="data">
+                29 de setembro de 2026
+            </div>
+
+            <h3>
+Micareta de Feira 2026 já tem data definida: 19 a 22 de novembro            </h3>
+
+            <p>
+A Micareta de Feira de Santana 2026 já tem data definida: será realizada de 19 a 22 de novembro, celebrando os 85 anos da festa. A mudança para o segundo semestre faz parte de uma proposta da Prefeitura para revitalizar e fortalecer o evento, colocando a Micareta novamente entre os grandes eventos do calendário festivo da Bahia.
+</p>
+
+        </div>
+
+    </article>
+
+
+</div>
+
+</section>
+
+
+
+
+<!-- ===================================== REDES SOCIAIS ====================================== -->
+
+<section class="redes">
+
+<h2>
+    Siga o Portal Plinio Neto
+</h2>
+
+<p>
+    Acompanhe nossas notícias, vídeos e novidades
+    pelas redes sociais.
+</p>
+
+
+<div class="links-redes">
+
+    <!--
+    TROQUE O LINK PELO INSTAGRAM DO PORTAL
+    -->
+
+    <a href="https://www.instagram.com/pliniounetooficial?stkn=MWlvZzlwNG5pMWJtdg=="
+       target="_blank">
+
+        📷 Instagram
+
+    </a>
+
+
+    <!--
+    TROQUE O NÚMERO DO WHATSAPP
+
+    Exemplo:
+    https://wa.me/5575999999999
+    -->
+
+    <a href="https://wa.me/557592325474?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20fazer%20uma%20parceria%20com%20o%20Portal%20Plinio%20Neto.%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es."
+   target="_blank"
+   class="whatsapp">
+
+    🤝 Quero fazer uma parceria
+
+</a>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ===================================== PARCERIAS ====================================== -->
+
+<section class="parcerias" id="parcerias">
+
+<div class="titulo">
+
+    <h2>
+        Nossos Parceiros
+    </h2>
+
+    <p>
+        Empresas e marcas que apoiam o Portal Plinio Neto.
+    </p>
+
+</div>
+
+
+<div class="parceiros">
+
+
+    <!-- PARCEIRO 01 -->
+
+    <div class="parceiro">
+
+        <!--
+        TROQUE PELO LOGO DO PARCEIRO
+
+        Exemplo:
+        <img src="lhttps://ib.co/0HQmB3M"
+        -->
+
+        <img src="https://i.ibb.co/mfSbv7q/MATR-CULA-ABERTA-2027.png" 
+         alt="ALS FILMS">
+
+    <h3>LUCAS TEC 
+
+    </div>
+
+
+
+    <!-- PARCEIRO 02 -->
+<div class="parceiro">
+
+    <img src="https://i.ibb.co/mfSbv7q/MATR-CULA-ABERTA-2027.png" 
+         alt="ALS FILMS">
+
+    <h3>ALS FILMS</h3>
+
+</div>
+
+
+
+    <!-- PARCEIRO 03 -->
+
+    <div class="parceiro">
+
+      <img src="https://i.ibb.co/mfSbv7q/MATR-CULA-ABERTA-2027.png" 
+         alt="ALS FILMS">
+
+    <h3>LUCAS TRANSPORTE
+
+    </div>
+
+
+
+    <!-- PARCEIRO 04 -->
+
+    <div class="parceiro">
+
+       <img src="https://i.ibb.co/mfSbv7q/MATR-CULA-ABERTA-2027.png" 
+         alt="ALS FILMS">
+
+    <h3>ALS FILMS</h3>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+
+<!-- ===================================== CONTATO / ANUNCIE ====================================== -->
+
+<section class="contato" id="contato">
+
+<h2>
+    Quer anunciar no Portal?
+</h2>
+
+<p>
+    Entre em contato conosco para publicidade,
+    divulgação e parcerias.
+</p>
+
+
+<!--
+TROQUE O NÚMERO DO WHATSAPP
+-->
+
+<a href="https://wa.me/557592325474
+   target="_blank"
+   class="whatsapp">
+
+    💬 Falar pelo WhatsApp
+
+</a>
+
+</section>
+
+
+
+
+<!-- BOTÃO FIXO: PARCERIAS PELO WHATSAPP -->
+
+<a class="whatsapp-flutuante" href="https://wa.me/557592325474?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20fazer%20uma%20parceria%20com%20o%20Portal%20Plinio%20Neto.%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" aria-label="Fale com o Portal Plinio Neto sobre parcerias">
+<span aria-hidden="true">💬</span>
+<span>Seja parceiro</span>
+</a>
+
+<!-- ===================================== RODAPÉ ====================================== -->
+
+<footer>
+
+<strong>
+    PORTAL PLINIO NETO
+</strong>
+
+<p>
+    Informação que conecta.
+</p>
+
+<p>
+    © 2026 Portal Plinio Neto — Todos os direitos reservados.
+</p>
+
+</footer>
+
+</body>
+
+</html>
+
+Fechar
